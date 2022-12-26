@@ -3,10 +3,13 @@ package com.example.my_p_application;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,23 @@ public class Fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false);
+        View view = inflater.inflate(R.layout.fragment_2, container, false);
+
+        Button button = view.findViewById(R.id.b_next);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                  EditText id = view.findViewById(R.id.id_);
+                EditText name = view.findViewById(R.id.name_);
+                EditText phone = view.findViewById(R.id.phone_);
+                Person p = new Person(id.getText().toString(),name.getText().toString(),phone.getText().toString(),"aaa@gmail.com");
+
+
+                MainActivity mainActivity= (MainActivity) getActivity();
+                mainActivity.write(p);
+                 Navigation.findNavController(view).navigate(R.id.fragment3);
+            }
+        });
+        return view;
     }
 }
