@@ -47,6 +47,7 @@ public class Fragment2 extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -63,15 +64,18 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_2, container, false);
+        EditText id = view.findViewById(R.id.id_);
+        EditText name = view.findViewById(R.id.name_);
+        EditText phone = view.findViewById(R.id.phone_);
 
         Button button = view.findViewById(R.id.b_next);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                  EditText id = view.findViewById(R.id.id_);
-                EditText name = view.findViewById(R.id.name_);
-                EditText phone = view.findViewById(R.id.phone_);
-                Person p = new Person(id.getText().toString(),name.getText().toString(),phone.getText().toString(),"aaa@gmail.com");
+
+
+//                Person p = new Person(id.getText().toString(),name.getText().toString(),phone.getText().toString(),"aaa@gmail.com");
+                Person p = new Person("sisi","1234" , "333555444","sa@gmail.com");
 
 
                 MainActivity mainActivity= (MainActivity) getActivity();

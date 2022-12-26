@@ -69,7 +69,7 @@ public class Fragment1 extends Fragment {
             public void onClick(View view) {
                 MainActivity mainActivity= (MainActivity) getActivity();
                 mainActivity.login();
-                Navigation.findNavController(view).navigate(R.id.fragment2);
+                Navigation.findNavController(view).navigate(R.id.fragment3);
 
 
             }

@@ -85,23 +85,27 @@ public class MainActivity extends AppCompatActivity {
 
         myRef.setValue(p);
     }
-    public void read() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("users").child("1234");
+    Person per = new Person();
+
+    public Person read(String id) {
+         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("users").child(id);
         // Read from the database
          myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                Person value = dataSnapshot.getValue(Person.class);
-                Log.d("result" , value.name);
+                per = dataSnapshot.getValue(Person.class);
+                 Log.d("result" , per.name);
              }
 
             @Override
             public void onCancelled(DatabaseError error) {
               }
         });
+        return per;
     }
+
 
 }
