@@ -6,10 +6,6 @@
     tools:context=".Fragment2">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,30 +16,37 @@
             android:id="@+id/id_"
             android:layout_width="match_parent"
             android:layout_height="62dp"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Id" />
+            android:hint="enter your id"
+            android:text=""
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/name_"
             android:layout_width="match_parent"
             android:layout_height="71dp"
+            android:layout_weight="1"
             android:ems="10"
+            android:hint="enter your name"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="" />
 
         <EditText
             android:id="@+id/phone_"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_weight="1"
             android:ems="10"
+            android:hint="enter your phone"
             android:inputType="phone"
-            android:text="phone" />
+            android:text="" />
 
         <Button
             android:id="@+id/b_next"
             android:layout_width="match_parent"
             android:layout_height="109dp"
+            android:layout_weight="1"
             android:text="next" />
     </LinearLayout>
 

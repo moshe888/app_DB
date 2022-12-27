@@ -22,7 +22,7 @@ package com.example.my_p_application;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private EditText emailT ;
+    public EditText emailT ;
     private EditText passT  ;
 
     @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this,"login ok",Toast.LENGTH_LONG).show();
-                             read();
+//                             read();
 
                         } else {
                             Toast.makeText(MainActivity.this,"login fail",Toast.LENGTH_LONG).show();
@@ -96,9 +96,15 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                per = dataSnapshot.getValue(Person.class);
-                 Log.d("result" , per.name);
-             }
+                 per = dataSnapshot.getValue(Person.class);
+                try {
+                   Log.d("result" , per.name);
+
+               } catch (Exception e) {
+                   Toast.makeText(MainActivity.this,"person fail",Toast.LENGTH_LONG).show();
+                   e.printStackTrace();
+               }
+            }
 
             @Override
             public void onCancelled(DatabaseError error) {

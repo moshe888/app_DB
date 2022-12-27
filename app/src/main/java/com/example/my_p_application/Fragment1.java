@@ -68,7 +68,12 @@ public class Fragment1 extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity mainActivity= (MainActivity) getActivity();
-                mainActivity.login();
+                try {
+                    mainActivity.login();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 Navigation.findNavController(view).navigate(R.id.fragment3);
 
 

@@ -74,11 +74,12 @@ public class Fragment2 extends Fragment {
             public void onClick(View view) {
 
 
-//                Person p = new Person(id.getText().toString(),name.getText().toString(),phone.getText().toString(),"aaa@gmail.com");
-                Person p = new Person("sisi","1234" , "333555444","sa@gmail.com");
+//                Person p = new Person("sisi","1234" , "333555444","sa@gmail.com");
 
 
                 MainActivity mainActivity= (MainActivity) getActivity();
+                Person p = new Person(id.getText().toString(),name.getText().toString(),phone.getText().toString(),mainActivity.emailT.getText().toString());
+
                 mainActivity.write(p);
                  Navigation.findNavController(view).navigate(R.id.fragment3);
             }

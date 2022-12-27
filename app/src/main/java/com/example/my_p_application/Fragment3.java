@@ -63,6 +63,9 @@ public class Fragment3 extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_3, container, false);
         EditText id1 = view.findViewById(R.id.inp_id);
+        EditText id2 = view.findViewById(R.id.t1);
+        EditText name = view.findViewById(R.id.t2);
+        EditText phone = view.findViewById(R.id.t3);
 
 
 
@@ -70,15 +73,15 @@ public class Fragment3 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
          @Override
         public void onClick(View view) {
-             EditText id2 = view.findViewById(R.id.t1);
-             EditText name = view.findViewById(R.id.t2);
-             EditText phone = view.findViewById(R.id.t3);
+
+
 
             MainActivity mainActivity= (MainActivity) getActivity();
+             mainActivity.emailT.setText("jjj");
              Person p =   mainActivity.read(id1.getText().toString());
-             id2.setText(p.id);
-             name.setText(p.name);
-             phone.setText(p.phone);
+              id2.setText("id: " + p.id);
+             name.setText("name: " + p.name);
+             phone.setText("phone: " + p.phone);
 
 
 
